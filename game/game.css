@@ -1,0 +1,324 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Montserrat", sans-serif;
+    user-select: none;
+}
+
+.nsei{
+    padding-top: 10vh;
+}
+
+body{
+    background-image: url(../assets/background2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p{
+    color: #ffff;
+    font-size: 2.08vw;
+    font-weight: bold;
+}
+
+h1{
+    width: 17vw;
+}
+
+/* Caixa */
+.caixa{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 90vh; 
+    position: relative;
+}
+
+.pergunta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    height: 90%;
+    gap: 20px; 
+    padding: 20px;
+    margin: 0 auto; 
+    box-sizing: border-box;
+    filter: blur(10px);
+    background-color: #11C76F;
+    box-shadow: 5px 5px 10px;
+    border-radius: 50px;
+    overflow: hidden; 
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.questao {
+    flex: 1;
+    text-align: center;
+    font-size: 1rem; 
+    line-height: 1.5;
+}
+
+.pergunta h1{
+    color: white;
+}
+
+/* Alternativa */
+.alternativa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+
+.alternativa button{
+    color: #FFFF;
+}
+
+.alternativa button:hover{
+    background-color: #FFFF;
+}
+
+/* Button */
+button{
+    padding: clamp(8px, 2vw, 15px) clamp(10px, 2vw, 20px);
+    border: none;
+    cursor: pointer;
+    font-size: 3vh;
+    background-color: #11C76F;;
+    border-radius: 5px;
+    color: #FFFF;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: #D0D0D0;
+    color: #238662;
+}
+
+
+/* regra*/
+.regra{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    width: 40%;
+    height: 70vh;
+    background-color: #FFFF;
+    box-shadow: 5px 5px 10px;
+    position: absolute;
+}
+
+.regra p{
+    color: #136C4C;
+    font-size: 2.5vh;
+    padding: 2vh;
+}
+
+/* tutorial */
+.tutorial{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    width: 50%;
+    height: 70vh;
+    background-color: #FFFF;
+    box-shadow: 5px 5px 10px;
+    position: absolute;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+}
+
+.tutorial p{
+    color: #136C4C;
+    font-size: 2.5vh;
+    font-weight: normal;
+    padding: 1vh;
+}
+
+.image{
+    width: 40vh;
+    height: 40vh;
+}
+
+/* Erro */
+.erro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 50px;
+    width: 60vw;
+    height: 40vw;
+    background-color: #FFFF;
+    box-shadow: 5px 5px 10px;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}
+
+.erro p{
+    color: #136C4C;
+    font-size: 2.5vh;
+    padding: 2vh;
+    font-weight: normal;
+}
+
+/* Tempo */
+.timeoutMessage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    width: 60%;
+    height: 70vh;
+    background-color: #FFFF;
+    box-shadow: 5px 5px 10px;
+    position: absolute;
+    overflow-y: scroll; 
+    overflow-x: hidden; 
+}
+
+.timeoutMessage p{
+    color: #136C4C;
+    font-size: 2.5vh;
+    padding: 2vh;
+    font-weight: normal;
+}
+
+/* Valores */
+.humildade{
+    background-color: #1B9BC7;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.atitude{
+    background-color: #1585B4;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.simplicidade{
+    background-color: #169B50;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.disponibilidade{
+    background-color: #E86339;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.franqueza{
+    background-color: #D5202A;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.disciplina{
+    background-color: #EF933B;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+.determinacao{
+    background-color: #79AB5C;
+    color: #FFFF;
+    font-size: 2vh;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.pergunta img{
+    margin: 25px;
+    width: 15vh;
+}
+
+.nsei{
+    display: flex;
+    justify-items: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #FFFF;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar img {
+    height: 3rem;
+    max-width: 100%; 
+}
+
+.navbar button {
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #136C4C;
+    text-decoration: none;
+    margin: 0 0.5rem; 
+    white-space: nowrap;
+}
+
+.navbar button:hover {
+    background-color: #D0D0D0;
+    color: #238662;
+}
+
+button #timer:hover{
+    color: #136C4C;
+    background-color: #FFFf;
+}
+
+input{
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #136C4C;
+    text-decoration: none;
+    margin: 0 0.5rem; 
+    white-space: nowrap;
+    width: 100px;
+}
+

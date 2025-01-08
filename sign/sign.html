@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game Digital - Cadastro</title>
+    <link rel="stylesheet" href="sign.css">
+    <script src="../script/script.js" defer></script>
+    <script src="../script/post.js"></script>
+    <link rel="icon" href="../assets/images.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <img src="../assets/picpaylogo.webp" alt="">
+        <div>
+            <button onclick="aparecerTutorial()" ondblclick="desaparecerTutorial()">Tutorial</button>
+            <button onclick="aparecerRegra()" ondblclick="desaparecerRegra()">Regras</button>
+        </div>
+    </div>
+    <div id="container" >
+        <form action="" onsubmit="cadastrarUsuario()">
+            <h1>Cadastro</h1>
+            <br>
+            <label for="nome"><p>Nome</p></label>
+            <input name="nome" id="nome" type="text" placeholder="Ex: João Silva">
+            <br>
+            <label for="email"><p>Email:</p></label>
+            <input name="email" id="email" type="email" placeholder="Ex: email@gmail.com">
+            <br>
+            <label for="senha"><p>Senha:</p></label>
+            <input name="password" id="password" type="password" placeholder="Ex: senha123">
+            <button type="submit" class="restart" onclick="cadastrarUsuario(), window.location.href='../game/pergunta1.html'">Cadastrar</button>
+            <br>
+            <!-- <a href="login.html">Login</a> -->
+        </form>
+        <div class="regra" id="desaparece">
+            <br><br><br><br><br><br>
+            <p>As regras do jogo são as seguintes:</p>
+            <p>1ª O quiz tem que ser feito de forma individual</p>
+            <p>2ª Somente uma alternativa é a correta</p>
+            <p>3ª Respostas corretas recebem pontos</p>
+            <p>4ª Você só tem 10 minutos</p>
+
+            <button onclick="desaparecerRegra()">Continuar</button>
+        </div>
+        <div class="tutorial" id="desaparece2">
+            <br>
+            <h1 class="arroz">Tutorial</h1>
+            <p>Este é o tutorial para ensinar a jogar!</p>
+            <p>Para começar clique no botão "Começar o jogo"</p>
+            <img src="../assets/button-start.jpg" class="image">
+            <br>
+            <p>Depois disso leia as regras para entender o jogo</p>
+            <p>Agora com as regras lidas, clique no botão continuar</p>
+            <br>
+            <img src="../assets/button-rules.png" class="image">
+            <br>
+            <p>Se inicia um cronômetro de 10 minutos</p>
+            <img src="../assets/timer.png" class="image">
+            <br>
+            <p>Você tem que responder todas as perguntas</p>
+            <p>da forma certa, antes que o tempo acabe!</p>
+            <img src="../assets/howtoplay.png" class="image">
+            <p>Boa sorte!</p>
+            <br>
+            <button onclick="desaparecerTutorial(),resetar()">Continuar</button>
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>

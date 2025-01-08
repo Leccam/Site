@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compartilhar no WhatsApp</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    a img {
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s ease-in-out;
+    }
+    a img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Compartilhar no WhatsApp</h1>
+  <p>Clique no ícone abaixo para compartilhar:</p>
+
+  <!-- Botão com imagem para compartilhar -->
+  <a id="whatsappShare" href="#" target="_blank">
+    <img width="50" height="50" src="../assets/zap.png" alt="Compartilhar no WhatsApp">
+  </a>
+
+  <script>
+    // Texto e URL para compartilhar
+    const textToShare = "Confira este conteúdo incrível!";
+    const urlToShare = window.location.href; // URL da página atual
+
+    // Gerar link dinâmico para WhatsApp
+    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare + ' ' + urlToShare)}`;
+    
+    // Atribuir o link gerado ao href da tag <a>
+    document.getElementById('whatsappShare').href = whatsappLink;
+  </script>
+</body>
+</html>

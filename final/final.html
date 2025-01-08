@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final</title>
+    <link rel="stylesheet" href="final.css">
+    <script src="../script/script.js" defer></script>
+    <script src="../script/post.js"></script>
+    <link rel="icon" href="../assets/images.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <img src="../assets/picpaylogo.webp" alt="">
+        <div>
+            <button onclick="aparecerTutorial()" ondblclick="desaparecerTutorial()">Tutorial</button>
+            <button onclick="aparecerRegra()" ondblclick="desaparecerRegra()">Regras</button>
+            <input type="text" class="cronometro" value="00:00" readonly/>
+        </div>
+    </div>
+    <div class="caixa">
+        <div class="pergunta" id="filtro">
+            <br><br>
+            <script>
+                var tempo = parseInt(localStorage.getItem("tempo")) // tempo em segundos
+                var working = false // sinaliza se o timer está ativado
+                var intervaloID = 0 // identificação do intervalo que permite limpá-lo
+
+                function exibeTempo(){
+                    let min = parseInt(tempo/60) // pega a parte inteira dos minutos
+                    let seg = tempo % 60 // calcula os segundos restantes
+                    let smin = min.toString().padStart(2, '0') // formata o número em duas casas
+                    let sseg = seg.toString().padStart(2, '0')
+
+                    let tempoTela = smin + ':' + sseg // váriavel para formatar no estilo cronômetro
+                    document.querySelector(".cronometro").value = tempoTela
+
+                    localStorage.setItem("tempo", tempo); // Atualiza o tempo no localStorage
+                    console.log(tempo)
+                    if (tempo < 0){ // zera temporizador
+                        working = false
+                        clearInterval(intervaloID)
+                        localStorage.removeItem("tempo"); // Remove o tempo armazenado
+                    }
+                }
+
+                function temporizador(t){
+                    if(working == false){
+                        working = true
+                        tempo = t
+                        localStorage.setItem("tempo", tempo); // Salva o tempo inicial
+                        exibeTempo()
+                        intervaloID = setInterval(exibeTempo, 1000) // 1s
+                    }
+                }
+
+                function reiniciarTimer() {
+                    clearInterval(intervaloID); // Para o timer atual
+                    localStorage.removeItem("tempo"); // Remove o tempo armazenado
+                    tempo = 0;
+                    working = false;
+                    document.querySelector(".cronometro").value = "00:00"; // Reseta a exibição
+                }
+
+                if (tempo > 0) {
+                    working = true;
+                    intervaloID = setInterval(exibeTempo, 1000); // Continua o timer
+                } else {
+                    document.querySelector(".cronometro").value = "00:00"; // Exibição inicial
+                }
+
+            </script>
+            
+            <p id="nome" >Parabéns, </p>
+            <p>Sua pontuação foi de:</p>
+            <h1 id="pontos"> pontos!</h1>
+            <button id="reset" onclick="window.location.href='/home/home.html', temporizador(600) ">Reiniciar jogo</button>
+
+            <div class="redes">
+                <a id="twitterShare" href="#" target="_blank">
+                    <img width="50" height="50" src="../assets/twitter.webp" alt="Compartilhar no Twitter">
+                </a>
+
+                <a id="facebookShare" href="#" target="_blank">
+                    <img width="50" height="50" src="../assets/facebook.jpeg" alt="Compartilhar no Facebook">
+                </a>
+
+                <a id="whatsappShare" href="#" target="_blank">
+                    <img width="50" height="50" src="../assets/zap.png" alt="Compartilhar no WhatsApp">
+                </a>
+
+                <script>
+                    window.onload = function(){
+                        let nome = localStorage.getItem("nome")
+                        document.getElementById("nome").innerHTML = "Parabéns, " + nome + "!"
+                        let pontos = localStorage.getItem("pontos")
+                        document.getElementById("pontos").innerHTML = pontos + " pontos!"
+                        console.log(pontos)
+                        reiniciarTimer()
+                    }
+
+                    // Twitter
+                    const tweetText = "Eu consegui " + localStorage.getItem("pontos") + " pontos neste jogo de valores da J&F!! \n Venha jogar também para ver o quanto você consegue! 😀 \n";
+                
+                    const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent('http://127.0.0.1:5500/home/home.html')}`;
+                    
+                    document.getElementById('twitterShare').href = twitterLink;
+
+                    // Facebook
+                    const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('http://127.0.0.1:5500/home/home.html')}`;
+                    
+                    document.getElementById('facebookShare').href = facebookLink;
+
+                    // Whatsapp
+                    const textToShare = "Eu consegui " + localStorage.getItem("pontos") + " pontos neste jogo de valores da J&F!! \n Venha jogar também para ver o quanto você consegue! 😀 \n";
+
+                    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare + ' ' + 'http://127.0.0.1:5500/home/home.html')}`;
+                    
+                    document.getElementById('whatsappShare').href = whatsappLink;
+                </script>
+            </div>
+        </div>
+
+
+        <div class="regra" id="desaparece">
+            <br><br>
+            <h1>Regras</h1>
+            <p>As regras do jogo são as seguintes:</p>
+            <p>1ª O quiz tem que ser feito de forma individual</p>
+            <p>2ª Somente uma alternativa é a correta</p>
+            <p>3ª Respostas corretas recebem pontos</p>
+            <p>4ª Você só tem 10 minutos</p>
+
+            <button onclick="desaparecerRegra()">Continuar</button>
+        </div>
+        <div class="tutorial" id="desaparece2">
+            <br><br>
+            <h1>Tutorial</h1>
+            <p>Este é o tutorial para ensinar a jogar!</p>
+            <p>Para começar clique no botão "Começar o jogo"</p>
+            <img src="../assets/button-start.jpg" class="image">
+            <br>
+            <p>Depois disso leia as regras para entender o jogo</p>
+            <p>Agora com as regras lidas, clique no botão continuar</p>
+            <br>
+            <img src="../assets/button-rules.png" class="image">
+            <br>
+            <p>Se inicia um cronômetro de 10 minutos</p>
+            <img src="../assets/timer.png" class="image">
+            <br>
+            <p>Você tem que responder todas as perguntas</p>
+            <p>da forma certa, antes que o tempo acabe!</p>
+            <img src="../assets/howtoplay.png" class="image">
+            <p>Boa Sorte!</p>
+            <br>
+            <button onclick="desaparecerTutorial()">Continuar</button>
+            <br><br>
+            
+        </div>
+    </div>
+</body>
+</html>

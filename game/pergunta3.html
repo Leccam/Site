@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta 3</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="../script/script.js" defer></script>
+    <script src="../script/post.js"></script>
+    <link rel="icon" href="../assets/images.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <img src="../assets/picpaylogo.webp" alt="">
+        <div>
+            <button onclick="aparecerTutorial()" ondblclick="desaparecerTutorial()">Tutorial</button>
+            <button onclick="aparecerRegra()" ondblclick="desaparecerRegra()">Regras</a>
+            <button onclick="restartGame()">Voltar</button>
+            <input type="text" class="cronometro" value="00:00" readonly/>
+        </div>
+    </div>
+    <div class="caixa">
+        <div class="pergunta" id="filtro">
+            <div class="nsei">
+                <img src="../assets/disciplina.png" alt="">
+                <div class="questao">
+                    <p>3/7</p>
+                    <p>Sempre cumpre o combinado</p>
+                </div>
+                <img src="../assets/disciplina.png" alt="">
+            </div>
+            <div class="alternativa"  >                
+                    <button class="humildade" onclick="aparecerErro()">
+                        <div>
+                            <strong>Humildade</strong>
+                            <br>
+                            "Não é arrogante, <br>
+                            não é o dono da <br>
+                            verdade, acha que <br>
+                            sabe de tudo e <br>
+                            valoriza a opinião <br>
+                            dos outros."
+                        </div>
+                    </button>
+                    <button class="disciplina" onclick="doPoint(), window.location.href='pergunta4.html', localStorage.setItem('pontos', 30)">
+                        <div>
+                            <strong>Disciplina</strong>
+                            <br>
+                            ”Ser planejador, <br>
+                            faz bem feito, <br>
+                            pontual com o horário, <br>
+                            não cria justificativas, <br>
+                            sempre entregando <br>
+                            resultados bons.”
+                        </div>
+                    </button>
+                    <button class="determinacao" onclick="aparecerErro()">
+                        <div>
+                            <strong>Determinação</strong>
+                            <br>
+                            "Ser proativo, <br>
+                            comprometido com <br>
+                            progresso pessoal,<br>
+                            supera expectativas, <br>
+                            engaja pessoas."
+                        </div>
+                    </button>
+                    <button class="franqueza" onclick="aparecerErro()">
+                        <div>
+                            <strong>Franqueza</strong>
+                            <br>
+                            “Ser claro na <br>
+                            comunicação, sabe <br>
+                            dizer não, sempre<br>
+                            acolhe as pessoas, <br>
+                            e não tem vergonha de <br>
+                            dizer que não sabe.”
+                        </div>
+                    </button>
+                    <button class="atitude" onclick="aparecerErro()">
+                        <div class="atitude-text">
+                            <strong>Atitude de dono</strong>
+                            <br>
+                            "Ser líder, <br>
+                            comprometido, <br>
+                            inspira pelo exemplo, <br>
+                            abraça desafios, <br>
+                            busca a excelência."
+                        </div>
+                    </button>
+                    </a>
+                    <button class="disponibilidade" onclick="aparecerErro()">
+                        <div>
+                            <strong>Disponibilidade</strong>
+                            <br>
+                            ”Estar sempre <br>
+                            pronto, realizando <br>
+                            seus propósitos, <br>
+                            fazer o que precisa <br>
+                            ser feito, fazer<br>
+                            escolhas conscientes.”
+                        </div>
+                    </button>
+                    <button class="simplicidade" onclick="aparecerErro()">
+                        <div>
+                            <strong>Simplicidade</strong>
+                            <br>
+                            “Tem um pensamento <br>
+                            direto, um <br>
+                            raciocínio lógico, <br>
+                            não complica as coisas, <br>
+                            sendo objetivo <br>
+                            e mão na massa.”
+                        </div>
+                    </button>
+            </div>
+        </div>
+        <div class="regra" id="desaparece">
+            <br><br>
+            <h1>Regras</h1>
+            <p>As regras do jogo são as seguintes:</p>
+            <p>1ª O quiz tem que ser feito de forma individual</p>
+            <p>2ª Somente uma alternativa é a correta</p>
+            <p>3ª Respostas corretas recebem pontos</p>
+            <p>4ª Você só tem 10 minutos</p>
+
+            <button onclick="desaparecerRegra()">Continuar</button>
+        </div>
+        <div class="tutorial" id="desaparece2">
+            <br><br>
+            <h1>Tutorial</h1>
+            <p>Este é o tutorial para ensinar a jogar!</p>
+            <p>Para começar clique no botão "Começar o jogo"</p>
+            <img src="../assets/button-start.jpg" class="image">
+            <br>
+            <p>Depois disso leia as regras para entender o jogo</p>
+            <p>Agora com as regras lidas, clique no botão continuar</p>
+            <br>
+            <img src="../assets/button-rules.png" class="image">
+            <br>
+            <p>Se inicia um cronômetro de 10 minutos</p>
+            <img src="../assets/timer.png" class="image">
+            <br>
+            <p>Você tem que responder todas as perguntas</p>
+            <p>da forma certa, antes que o tempo acabe!</p>
+            <img src="../assets/howtoplay.png" class="image">
+            <p>Boa Sorte!</p>
+            <br>
+            <button onclick="desaparecerTutorial()">Continuar</button>
+            <br><br>
+        </div>
+        <div class="erro" id="erro">
+            <h1>ERROU!</h1>
+            <img src="../assets/errou.png" class="image">
+            <p>A alternativa correta era: <strong>Disciplina</strong></p>
+            <p>
+                <strong>Disciplina pode ser aplicado no dia a dia da seguinte forma: <br></strong>
+                Saber trabalhar em equipe, ser um ouvinte ativo, 
+                respeitar a equipe e ser comprometido com o projeto;<br>
+                Ter postura adequada, de acordo com a especificidade de cada situação;<br>
+                Ter foco nos objetivos propostos, ser organizado, planejar, cumprir prazos e entregar com qualidade.
+            </p>
+            <br>
+            <button onclick="desaparecerErro(), window.location.href='pergunta4.html'">Continuar</button>
+            <br>
+        </div> 
+        
+        <div class="timeoutMessage" id="timeoutMessage">
+            <h1>ACABOU O TEMPO!</h1>
+            <img src="../assets/errou.png" class="image">
+            <p>O tempo do jogo acabou!</p>
+            <p>Na próxima vez responda mais rápido as perguntas :/</p>
+            <br>
+            <button id="reset" onclick="resetar(), restartGame()">Reiniciar jogo</button>
+            <br>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
