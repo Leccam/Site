@@ -15,7 +15,7 @@ function doPost(url, body){
  
 function doPoint(){
     event.preventDefault()
-    let url = "http://localhost:8085/pontuar"
+    let url = "https://valores-back-w3eu.onrender.com/pontuar"
     
     body = {
         "name": localStorage.getItem("nome"),
@@ -30,7 +30,7 @@ function doPoint(){
 
 function cadastrarUsuario(){
     event.preventDefault()
-    let url = "http://localhost:8085/cadastro"
+    let url = "https://valores-back-w3eu.onrender.com/cadastro"
 
     let nome = document.getElementById('nome').value
     let email = document.getElementById('email').value
@@ -53,7 +53,7 @@ function cadastrarUsuario(){
 
 function loginUsuario(){
     event.preventDefault()
-    let url = "http://localhost:8085/login"
+    let url = "https://valores-back-w3eu.onrender.com/login"
 
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
