@@ -105,19 +105,19 @@
                     // Twitter
                     const tweetText = "Eu consegui " + localStorage.getItem("pontos") + " pontos neste jogo de valores da J&F!! \n Venha jogar também para ver o quanto você consegue! 😀 \n";
                 
-                    const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent('http://127.0.0.1:5500/home/home.html')}`;
+                    const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent('https://site-ggqf.onrender.com/home/home.html')}`;
                     
                     document.getElementById('twitterShare').href = twitterLink;
 
                     // Facebook
-                    const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('http://127.0.0.1:5500/home/home.html')}`;
+                    const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://site-ggqf.onrender.com/home/home.html')}`;
                     
                     document.getElementById('facebookShare').href = facebookLink;
 
                     // Whatsapp
                     const textToShare = "Eu consegui " + localStorage.getItem("pontos") + " pontos neste jogo de valores da J&F!! \n Venha jogar também para ver o quanto você consegue! 😀 \n";
 
-                    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare + ' ' + 'http://127.0.0.1:5500/home/home.html')}`;
+                    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(textToShare + ' ' + 'https://site-ggqf.onrender.com/home/home.html')}`;
                     
                     document.getElementById('whatsappShare').href = whatsappLink;
                 </script>

@@ -128,4 +128,5 @@ if (tempo > 0) {
     document.querySelector(".cronometro").value = "00:00"; // Exibição inicial
 }
 
+temporizador(600)
 document.getElementById('timeoutMessage').style.display = "none"

@@ -82,7 +82,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-  origin: 'http://127.0.0.1:5500', // Permitir requisições do frontend
+  origin: 'https://site-ggqf.onrender.com', // Permitir requisições do frontend
   methods: ['GET', 'POST'],        // Métodos permitidos
 }));
 
