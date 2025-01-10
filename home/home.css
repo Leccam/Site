@@ -156,7 +156,7 @@ button:hover{
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 758px) {
     .button-start {
         font-size: 2rem; 
         padding: 0.8em 1.5em; 

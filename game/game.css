@@ -152,7 +152,7 @@ button:hover{
 }
 
 /* Erro */
-.erro{
+.erro {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -164,15 +164,44 @@ button:hover{
     box-shadow: 5px 5px 10px;
     position: absolute;
     overflow-y: scroll;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    padding: 2vh;
 }
 
-.erro p{
+.erro p {
     color: #136C4C;
     font-size: 2.5vh;
     padding: 2vh;
     font-weight: normal;
 }
+
+/* Media queries para ajustar o layout em telas menores */
+@media (max-width: 768px) {
+    .erro {
+        width: 80vw;
+        height: 50vw;
+        padding: 5vw;
+    }
+
+    .erro p {
+        font-size: 3vh;
+        padding: 3vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .erro {
+        width: 90vw;
+        height: 100vw;
+        padding: 6vw;
+    }
+
+    .erro p {
+        font-size: 4vh;
+        padding: 4vh;
+    }
+}
+
 
 /* Tempo */
 .timeoutMessage{
@@ -282,6 +311,7 @@ button:hover{
     padding: 0 2rem; 
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
 }
 
 .navbar img {
@@ -306,12 +336,12 @@ button:hover{
     color: #238662;
 }
 
-button #timer:hover{
+button #timer:hover {
     color: #136C4C;
-    background-color: #FFFf;
+    background-color: #FFF;
 }
 
-input{
+input {
     border: none;
     background: none;
     font-size: 1.5rem;
@@ -322,4 +352,47 @@ input{
     white-space: nowrap;
     width: 100px;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar img {
+        height: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar button,
+    input {
+        font-size: 1.2rem;
+        margin: 0.3rem 0;
+        width: 24%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        align-items: center;
+        padding: 0.5rem 1rem; 
+    }
+
+    .navbar img {
+        height: 2rem;
+    }
+
+    .navbar button,
+    input {
+        font-size: 1rem;
+        width: 24%; 
+    }
+}
+
+
+
+
 
