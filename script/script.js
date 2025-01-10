@@ -76,6 +76,22 @@ desaparecerRegra()
 desaparecerTutorial()
 desaparecerErro()
 
+// Somar pontos
+
+if (!localStorage.getItem("pontos")) {
+    localStorage.setItem("pontos", 0);
+}
+
+function somarPontos() {
+    let currentTotal = parseInt(localStorage.getItem("pontos")) || 0;
+
+    currentTotal += 10;
+
+    localStorage.setItem("pontos", currentTotal);
+
+    console.log(`Pontos: ${currentTotal}`);
+}
+
 //Timer
 
 var tempo = parseInt(localStorage.getItem("tempo")) // tempo em segundos
