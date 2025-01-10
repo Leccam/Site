@@ -118,6 +118,7 @@ button{
     background-color: #11C76F;;
     border-radius: 5px;
     color: #FFFF;
+    transition: all 0.3s ease;
     font-weight: bold;
 }
 
@@ -126,7 +127,7 @@ button:hover{
     color: #238662;
 }
 
-.button-start{
+.button-start {
     background-image: none;
     border: none;
     color: #11C76F;
@@ -135,21 +136,44 @@ button:hover{
     border-radius: 25px;
     cursor: pointer;  
     font-size: 2.5rem;
-    padding: 1em 1em;
+    padding: 1em 2em; 
+    transition: all 0.3s ease;
 }
 
-.button-start:hover{
+.button-start:hover {
     border: 3px solid #FFFF;
     background-color: #11C76F;
     border-color: #FFFF;
     color: #FFFF;
 }
 
-.button-container{
+.button-container {
     display: flex;
     justify-content: center; 
     align-items: center;  
     height: 60vh;   
     position: relative;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .button-start {
+        font-size: 2rem; 
+        padding: 0.8em 1.5em; 
+    }
+}
+
+@media (max-width: 480px) {
+    .button-start {
+        font-size: 1.5rem;
+        padding: 0.5em 1em;
+    }
+    
+    .button-container {
+        height: auto; 
+        padding: 1em; 
+    }
+}
+
+
 

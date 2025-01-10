@@ -95,6 +95,7 @@ button{
     background-color: #11C76F;;
     border-radius: 5px;
     color: #FFFF;
+    transition: all 0.3s ease;
     font-weight: bold;
 }
 
